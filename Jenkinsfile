@@ -1,3 +1,11 @@
+node{
+	stage "Printing Maven Env Variable"
+	def mvnGene= tool 'M3'
+	println mvnGene
+	echo mvnGene
+    echo "PATH= ${PATH}"
+    echo "mvnHome= ${mvnHome}"
+}
 node {
 
  stage 'Stage 1'
@@ -22,14 +30,3 @@ node {
 }
 */
 
-node{
-	stage "Printing Maven Env Variable"
-	def mvnGene= tool 'M3'
-	println mvnGene
-	echo mvnGene
-	def mvnHome = tool 'Maven 3.3.9' 
-    println mvnHome
-    echo "PATH= ${PATH}"
-	echo "M2_HOME= ${M2_HOME}"
-    echo "mvnHome= ${mvnHome}"
-}
