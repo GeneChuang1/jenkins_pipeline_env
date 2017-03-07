@@ -1,10 +1,14 @@
 node{
 	stage "Printing Maven Env Variable"
-	def mvnGene= tool 'M3'
-	println mvnGene
-	echo mvnGene
-    echo "PATH= ${PATH}"
-    echo "mvnHome= ${mvnHome}"
+	def WORKSPACE= pwd()
+	println WORKSPACE
+
+    def buildprops = readProperties file: './properties/build.properties'
+    println buildprops
+    
+	echo 'workspace= WORKSPACE'
+	print "MAVEN_HOME is ${env.MAVEN_HOME} on this machine"
+    echo "javaHome= ${%JAVA_HOME%}"
 }
 node {
 
