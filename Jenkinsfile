@@ -10,6 +10,7 @@ node {
    echo 'notice that this fails to echo JAVA_HOME ${env.JAVA_HOME} due to single quotes'   
    echo "JAVA_HOME is ${env.JAVA_HOME} on this machine"   
 }
+/*
 stage 'Print All Environmental Variables'
 node {
     println 'Printing all the Environmental Variables'
@@ -19,9 +20,13 @@ node {
     }
     println "Done printing all the Environmental Variables"
 }
+*/
 
 node{
 	stage "Printing Maven Env Variable"
+	def mvnGene= tool 'M3'
+	println mvnGene
+	echo mvnGene
 	def mvnHome = tool 'Maven 3.3.9' 
     println mvnHome
     echo "PATH= ${PATH}"
