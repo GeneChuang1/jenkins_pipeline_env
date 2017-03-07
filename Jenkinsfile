@@ -1,4 +1,3 @@
-stage 'Print Message'
 node {
 
  stage 'Stage 1'
@@ -14,9 +13,18 @@ node {
 stage 'Print All Environmental Variables'
 node {
     println 'Printing all the Environmental Variables'
-    sh 'env > env.txt'
+    bat 'env > env.txt'
     readFile('env.txt').split("\r?\n").each {
         println it
     }
     println "Done printing all the Environmental Variables"
+}
+
+node{
+	stage "Printing Maven Env Variable"
+	def mvnHome = tool 'Maven 3.3.9' 
+    println mvnHome
+    echo "PATH= ${PATH}"
+	echo "M2_HOME= ${M2_HOME}"
+    echo "mvnHome= ${mvnHome}"
 }
