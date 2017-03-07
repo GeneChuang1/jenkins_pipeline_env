@@ -1,5 +1,6 @@
 node{
-	stage 'Printing Maven Env Variable'
+	stage "Printing Maven Env Variable"
+	/*
 	def workspace= pwd()
 	println workspace
 
@@ -9,7 +10,9 @@ node{
 	echo 'workspace= WORKSPACE'
 	print "MAVEN_HOME is ${env.MAVEN_HOME} on this machine"
     echo "javaHome= ${%JAVA_HOME%}"
+    */
 }
+
 node {
 
  stage 'Stage 1'
