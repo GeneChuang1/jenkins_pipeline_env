@@ -1,7 +1,8 @@
 node{
 	stage "Printing Maven Env Variable"
-	def WORKSPACE= pwd()
-	println WORKSPACE
+	echo "PRINTING MAVEN ENV VARIABLE"
+	def workspace= pwd()
+	println workspace
 
     def buildprops = readProperties file: './properties/build.properties'
     println buildprops
