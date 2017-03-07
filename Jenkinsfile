@@ -1,6 +1,5 @@
 node{
-	stage "Printing Maven Env Variable"
-	echo "PRINTING MAVEN ENV VARIABLE"
+	stage 'Printing Maven Env Variable'
 	def workspace= pwd()
 	println workspace
 
