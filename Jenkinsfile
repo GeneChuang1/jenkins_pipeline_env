@@ -1,3 +1,4 @@
+stage 'Print Message'
 node {
 
  stage 'Stage 1'
@@ -9,4 +10,13 @@ node {
    echo 'that you did not want to commit to source because every Jenkins server should run it differently'
    echo 'notice that this fails to echo JAVA_HOME ${env.JAVA_HOME} due to single quotes'   
    echo "JAVA_HOME is ${env.JAVA_HOME} on this machine"   
+}
+stage 'Print All Environmental Variables'
+node {
+    println 'Printing all the Environmental Variables'
+    sh 'env > env.txt'
+    readFile('env.txt').split("\r?\n").each {
+        println it
+    }
+    println "Done printing all the Environmental Variables"
 }
